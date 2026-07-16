@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Download, Mail, Sparkles } from "lucide-react";
-import profile from "@/assets/profile.png";
 import { heroProfile, heroRoles } from "@/data/hero";
 
 export function Hero() {
@@ -97,7 +96,7 @@ export function Hero() {
             <div className="absolute inset-2 rounded-full bg-gradient-to-br from-primary to-secondary p-1">
               <div className="w-full h-full rounded-full overflow-hidden bg-background">
                 <img
-                  src={profile}
+                  src="/profile.png"
                   alt={heroProfile.name}
                   width={768}
                   height={768}
