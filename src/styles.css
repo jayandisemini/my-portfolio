@@ -90,10 +90,10 @@
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
 }
 
-@utility glass-hover {
+.glass-hover {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-@utility glass-hover:hover {
+.glass-hover:hover {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04));
   border-color: rgba(255, 255, 255, 0.25);
   box-shadow: 0 12px 40px 0 rgba(129, 140, 248, 0.25);

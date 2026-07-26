@@ -70,13 +70,44 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
+    title: "Jayandi Semini | Computer Science & Software Developer Portfolio",
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "title", content: "Jayandi Semini | Computer Science & Software Developer Portfolio" },
+      {
+        name: "description",
+        content:
+          "Official personal portfolio of Jayandi Semini — Computer Science undergraduate passionate about full-stack web development, Flutter mobile apps, cloud computing, and UI/UX design.",
+      },
+      {
+        name: "keywords",
+        content:
+          "Jayandi Semini, Portfolio, Software Developer, Full-Stack, Flutter, React, TypeScript, Sri Lanka, Computer Science, UI/UX",
+      },
       { name: "author", content: "Jayandi Semini" },
+      { name: "theme-color", content: "#191924" },
+
+      /* Open Graph / Facebook */
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Jayandi Semini Portfolio" },
+      { property: "og:title", content: "Jayandi Semini | Software Developer & Designer" },
+      {
+        property: "og:description",
+        content:
+          "Explore software projects, mobile applications, technical skills, and resume of Jayandi Semini.",
+      },
+      { property: "og:image", content: "/profile.png" },
+
+      /* Twitter */
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Jayandi Semini | Software Developer Portfolio" },
+      {
+        name: "twitter:description",
+        content:
+          "Computer Science undergraduate building full-stack web applications and cross-platform mobile apps.",
+      },
+      { name: "twitter:image", content: "/profile.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
