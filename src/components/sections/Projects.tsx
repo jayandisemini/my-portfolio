@@ -7,6 +7,14 @@ import type { Project } from "@/types";
 
 export function Projects() {
   const [activeProject, setActiveProject] = useState<Project | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<string>("All");
+
+  const categories = ["All", "Mobile Application", "Web Development", "Full-Stack Web", "Enterprise System"];
+
+  const filteredProjects =
+    selectedCategory === "All"
+      ? projects
+      : projects.filter((p) => p.category === selectedCategory);
 
   return (
     <Section
@@ -15,66 +23,90 @@ export function Projects() {
       title="Things I've built"
       subtitle="A selection of projects spanning mobile, web, and full-stack systems."
     >
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projects.map((p, i) => (
-          <motion.article
-            key={p.title}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: i * 0.08 }}
-            onClick={() => setActiveProject(p)}
-            className="glass overflow-hidden group hover:-translate-y-2 transition-all duration-300 cursor-pointer flex flex-col justify-between"
-          >
-            <div>
-              <div
-                className={`relative h-44 bg-gradient-to-br ${p.gradient} flex items-center justify-center overflow-hidden`}
-              >
-                <div className="text-7xl group-hover:scale-125 transition-transform duration-500">
-                  {p.emoji}
-                </div>
-                {p.category && (
-                  <span className="absolute top-3 left-3 px-3 py-1 text-xs font-semibold rounded-full bg-black/40 backdrop-blur-md border border-white/10 text-accent">
-                    {p.category}
-                  </span>
-                )}
-                <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent" />
-              </div>
-              <div className="p-6">
-                <h3 className="font-bold text-lg mb-2 group-hover:text-primary transition-colors flex items-center gap-2">
-                  {p.title}
-                </h3>
-                <p className="text-sm text-muted-foreground mb-4 leading-relaxed line-clamp-2">
-                  {p.desc}
-                </p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {p.tech.map((t) => (
-                    <span
-                      key={t}
-                      className="text-xs px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-muted-foreground"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div className="px-6 pb-6 pt-0">
-              <button
-                type="button"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setActiveProject(p);
-                }}
-                className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-white/5 border border-white/10 hover:bg-white/10 hover:border-primary/50 transition-all text-foreground"
-              >
-                <Sparkles size={14} className="text-primary" /> View Details
-              </button>
-            </div>
-          </motion.article>
-        ))}
+      {/* Category Filter Tabs */}
+      <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-10">
+        {categories.map((cat) => {
+          const isActive = selectedCategory === cat;
+          return (
+            <button
+              key={cat}
+              type="button"
+              onClick={() => setSelectedCategory(cat)}
+              className={`px-4 py-2 rounded-full text-xs font-semibold transition-all border ${
+                isActive
+                  ? "bg-gradient-to-r from-primary to-secondary text-primary-foreground border-transparent shadow-lg scale-105"
+                  : "glass text-muted-foreground hover:text-foreground border-white/10 hover:border-white/20"
+              }`}
+            >
+              {cat}
+            </button>
+          );
+        })}
       </div>
+
+      <motion.div layout className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <AnimatePresence>
+          {filteredProjects.map((p, i) => (
+            <motion.article
+              layout
+              key={p.title}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              transition={{ duration: 0.35, delay: i * 0.05 }}
+              onClick={() => setActiveProject(p)}
+              className="glass overflow-hidden group hover:-translate-y-2 transition-all duration-300 cursor-pointer flex flex-col justify-between"
+            >
+              <div>
+                <div
+                  className={`relative h-44 bg-gradient-to-br ${p.gradient} flex items-center justify-center overflow-hidden`}
+                >
+                  <div className="text-7xl group-hover:scale-125 transition-transform duration-500">
+                    {p.emoji}
+                  </div>
+                  {p.category && (
+                    <span className="absolute top-3 left-3 px-3 py-1 text-xs font-semibold rounded-full bg-black/40 backdrop-blur-md border border-white/10 text-accent">
+                      {p.category}
+                    </span>
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent" />
+                </div>
+                <div className="p-6">
+                  <h3 className="font-bold text-lg mb-2 group-hover:text-primary transition-colors flex items-center gap-2">
+                    {p.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground mb-4 leading-relaxed line-clamp-2">
+                    {p.desc}
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {p.tech.map((t) => (
+                      <span
+                        key={t}
+                        className="text-xs px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-muted-foreground"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <div className="px-6 pb-6 pt-0">
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setActiveProject(p);
+                  }}
+                  className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-white/5 border border-white/10 hover:bg-white/10 hover:border-primary/50 transition-all text-foreground"
+                >
+                  <Sparkles size={14} className="text-primary" /> View Details
+                </button>
+              </div>
+            </motion.article>
+          ))}
+        </AnimatePresence>
+      </motion.div>
 
       {/* Interactive Project Modal */}
       <AnimatePresence>
