@@ -3,6 +3,9 @@ import type { LucideIcon } from "lucide-react";
 export type Project = {
   title: string;
   desc: string;
+  longDesc?: string;
+  features?: string[];
+  category?: string;
   tech: string[];
   gradient: string;
   emoji: string;
