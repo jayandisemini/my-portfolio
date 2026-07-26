@@ -110,6 +110,20 @@
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
 }
 
+:root.light .glass {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.6));
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(99, 102, 241, 0.08);
+}
+
+input, textarea {
+  color: var(--color-foreground) !important;
+}
+input::placeholder, textarea::placeholder {
+  color: var(--color-muted-foreground) !important;
+  opacity: 0.75;
+}
+
 .glass-hover {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }

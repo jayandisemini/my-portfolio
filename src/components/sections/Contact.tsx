@@ -97,36 +97,36 @@ export function Contact() {
         >
           <div className="grid sm:grid-cols-2 gap-5">
             <div>
-              <label className="text-sm font-medium block mb-2">Name</label>
+              <label className="text-sm font-semibold block mb-2 text-foreground">Name</label>
               <input
                 name="name"
                 required
                 maxLength={100}
-                className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30 transition text-sm"
+                className="w-full px-4 py-3 rounded-xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30 transition text-sm text-foreground placeholder:text-muted-foreground/75"
                 placeholder="Your name"
               />
             </div>
             <div>
-              <label className="text-sm font-medium block mb-2">Email</label>
+              <label className="text-sm font-semibold block mb-2 text-foreground">Email</label>
               <input
                 name="email"
                 type="email"
                 required
                 maxLength={255}
-                className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30 transition text-sm"
+                className="w-full px-4 py-3 rounded-xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30 transition text-sm text-foreground placeholder:text-muted-foreground/75"
                 placeholder="you@example.com"
               />
             </div>
           </div>
 
           <div>
-            <label className="text-sm font-medium block mb-2">Message</label>
+            <label className="text-sm font-semibold block mb-2 text-foreground">Message</label>
             <textarea
               name="message"
               required
               maxLength={1000}
               rows={5}
-              className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30 transition resize-none text-sm"
+              className="w-full px-4 py-3 rounded-xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30 transition resize-none text-sm text-foreground placeholder:text-muted-foreground/75"
               placeholder="Tell me about your project or opportunity..."
             />
           </div>
