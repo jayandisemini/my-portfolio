@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Download, Mail, Sparkles } from "lucide-react";
+import { Download, Mail, Sparkles, ArrowDown } from "lucide-react";
 import { heroProfile, heroRoles } from "@/data/hero";
 
 export function Hero() {
@@ -37,89 +37,124 @@ export function Hero() {
     >
       <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-primary/30 blur-3xl animate-drift" />
       <div className="absolute bottom-1/4 -right-32 w-96 h-96 rounded-full bg-secondary/30 blur-3xl animate-drift" />
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 grid lg:grid-cols-2 gap-12 items-center w-full">
+
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 grid lg:grid-cols-2 gap-12 items-center w-full z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass mb-6 text-xs">
-            <Sparkles size={14} className="text-accent" />
-            <span className="text-muted-foreground">{heroProfile.availability}</span>
-          </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass mb-6 text-xs font-medium border border-primary/20 shadow-lg"
+          >
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+            </span>
+            <span className="text-foreground/90">{heroProfile.availability}</span>
+          </motion.div>
+
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
             Hi, I'm <span className="gradient-text">{heroProfile.name}</span>
           </h1>
-          <p className="mt-4 text-xl sm:text-2xl text-foreground/90 font-medium">
+
+          <p className="mt-4 text-xl sm:text-2xl text-foreground/90 font-medium tracking-wide">
             {heroProfile.role}
           </p>
-          <div className="mt-3 h-8 text-lg text-accent font-mono">
-            {text}
-            <span className="animate-blink">|</span>
+
+          <div className="mt-3 h-8 text-lg sm:text-xl text-accent font-mono font-semibold flex items-center">
+            <span>{text}</span>
+            <span className="animate-blink text-primary ml-1">|</span>
           </div>
+
           <p className="mt-6 text-base text-muted-foreground max-w-xl leading-relaxed">
             {heroProfile.bio}
           </p>
+
           <div className="mt-8 flex flex-wrap gap-4">
-            <a
+            <motion.a
+              whileHover={{ scale: 1.06 }}
+              whileTap={{ scale: 0.98 }}
               href={heroProfile.cvUrl}
               download
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-primary to-secondary text-primary-foreground font-medium glow-primary hover:scale-105 transition-transform"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-r from-primary to-secondary text-primary-foreground font-semibold glow-primary shadow-xl transition-all"
             >
               <Download size={18} /> Download CV
-            </a>
-            <a
+            </motion.a>
+
+            <motion.a
+              whileHover={{ scale: 1.06 }}
+              whileTap={{ scale: 0.98 }}
               href="#contact"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full glass hover:bg-white/10 transition font-medium"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full glass glass-hover font-semibold text-foreground transition-all"
             >
               <Mail size={18} /> Contact Me
-            </a>
+            </motion.a>
           </div>
+
           <div className="mt-12 grid grid-cols-3 gap-4 max-w-md">
             {heroProfile.stats.map((s) => (
-              <div key={s.l} className="glass p-4 text-center">
-                <div className="text-2xl font-bold gradient-text">{s.n}</div>
-                <div className="text-xs text-muted-foreground mt-1">{s.l}</div>
-              </div>
+              <motion.div
+                key={s.l}
+                whileHover={{ y: -4, scale: 1.03 }}
+                className="glass p-4 text-center border border-white/10 shadow-md transition-transform"
+              >
+                <div className="text-2xl font-extrabold gradient-text">{s.n}</div>
+                <div className="text-xs text-muted-foreground font-medium mt-1">{s.l}</div>
+              </motion.div>
             ))}
           </div>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 0, scale: 0.85 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.9, delay: 0.2 }}
           className="relative flex justify-center lg:justify-end"
         >
           <div className="relative w-72 h-72 sm:w-96 sm:h-96 animate-float">
-            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary via-secondary to-accent blur-2xl opacity-60" />
-            <div className="absolute inset-2 rounded-full bg-gradient-to-br from-primary to-secondary p-1">
-              <div className="w-full h-full rounded-full overflow-hidden bg-background">
+            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary via-secondary to-accent blur-3xl opacity-50" />
+            <div className="absolute inset-1.5 rounded-full bg-gradient-to-br from-primary to-secondary p-1 shadow-2xl">
+              <div className="w-full h-full rounded-full overflow-hidden bg-card">
                 <img
                   src="/profile.png"
                   alt={heroProfile.name}
                   width={768}
                   height={768}
-                  className="w-full h-full object-cover object-top hover:scale-110 transition-transform duration-700"
+                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
                   style={{ objectPosition: "50% 20%" }}
                 />
               </div>
             </div>
-            <div
-              className="absolute -top-4 -right-4 glass px-3 py-2 text-xs animate-float"
-              style={{ animationDelay: "1s" }}
+
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              className="absolute -top-3 -right-2 glass px-4 py-2 text-xs font-semibold rounded-2xl shadow-xl flex items-center gap-1.5 border border-white/20"
             >
-              💻 Coding
-            </div>
-            <div
-              className="absolute -bottom-4 -left-4 glass px-3 py-2 text-xs animate-float"
-              style={{ animationDelay: "2s" }}
+              <Sparkles size={14} className="text-amber-400" /> Full-Stack Dev
+            </motion.div>
+
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              className="absolute -bottom-3 -left-2 glass px-4 py-2 text-xs font-semibold rounded-2xl shadow-xl flex items-center gap-1.5 border border-white/20"
             >
-              🎨 Designing
-            </div>
+              ✨ Creative UI/UX
+            </motion.div>
           </div>
         </motion.div>
       </div>
+
+      {/* Scroll Down Indicator */}
+      <motion.a
+        href="#about"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, y: [0, 8, 0] }}
+        transition={{ opacity: { delay: 1 }, y: { repeat: Infinity, duration: 2 } }}
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 p-2 rounded-full glass hover:bg-white/10 transition text-muted-foreground hover:text-foreground hidden sm:flex items-center justify-center"
+      >
+        <ArrowDown size={18} />
+      </motion.a>
     </section>
   );
 }
