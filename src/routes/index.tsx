@@ -13,6 +13,7 @@ import { Projects } from "@/components/sections/Projects";
 import { Education } from "@/components/sections/Education";
 import { Experience } from "@/components/sections/Experience";
 import { Certifications } from "@/components/sections/Certifications";
+import { GitHubStats } from "@/components/sections/GitHubStats";
 import { Contact } from "@/components/sections/Contact";
 
 export const Route = createFileRoute("/")({
@@ -87,6 +88,7 @@ function Portfolio() {
             <About />
             <Skills />
             <Projects />
+            <GitHubStats />
             <Education />
             <Experience />
             <Certifications />
