@@ -15,6 +15,8 @@ export const projects: Project[] = [
     tech: ["Flutter", "Firebase", "Stripe", "Dart"],
     gradient: "from-orange-500/40 to-pink-500/40",
     emoji: "🍔",
+    repoUrl: "https://github.com/jayandisemini/food-ordering-app",
+    liveUrl: "https://github.com/jayandisemini/food-ordering-app",
   },
   {
     title: "Student Study Planner",
@@ -30,6 +32,8 @@ export const projects: Project[] = [
     tech: ["Flutter", "SQLite", "Provider", "Dart"],
     gradient: "from-emerald-500/40 to-cyan-500/40",
     emoji: "📚",
+    repoUrl: "https://github.com/jayandisemini/student-study-planner",
+    liveUrl: "https://github.com/jayandisemini/student-study-planner",
   },
   {
     title: "Portfolio Website",
@@ -45,6 +49,8 @@ export const projects: Project[] = [
     tech: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
     gradient: "from-indigo-500/40 to-violet-500/40",
     emoji: "💼",
+    repoUrl: "https://github.com/jayandisemini/my-portfolio",
+    liveUrl: "https://github.com/jayandisemini/my-portfolio",
   },
   {
     title: "E-commerce Application",
@@ -60,6 +66,8 @@ export const projects: Project[] = [
     tech: ["React", "Node.js", "Express", "MongoDB"],
     gradient: "from-rose-500/40 to-amber-500/40",
     emoji: "🛍️",
+    repoUrl: "https://github.com/jayandisemini/ecommerce-app",
+    liveUrl: "https://github.com/jayandisemini/ecommerce-app",
   },
   {
     title: "University Management System",
@@ -75,5 +83,7 @@ export const projects: Project[] = [
     tech: ["Java", "Spring Boot", "MySQL", "Bootstrap"],
     gradient: "from-sky-500/40 to-blue-600/40",
     emoji: "🎓",
+    repoUrl: "https://github.com/jayandisemini/university-management-system",
+    liveUrl: "https://github.com/jayandisemini/university-management-system",
   },
 ];

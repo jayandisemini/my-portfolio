@@ -9,6 +9,7 @@ export type Project = {
   tech: string[];
   gradient: string;
   emoji: string;
+  imageUrl?: string;
   liveUrl?: string;
   repoUrl?: string;
 };

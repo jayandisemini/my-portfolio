@@ -12,7 +12,7 @@ export const socials: SocialLink[] = [
     href: "https://www.linkedin.com/in/jayandi-semini-b6723a326",
     label: "LinkedIn",
   },
-  { icon: Github, href: "#", label: "GitHub" },
+  { icon: Github, href: "https://github.com/jayandisemini", label: "GitHub" },
   { icon: Facebook, href: "https://www.facebook.com/share/1BFNTxACD1/", label: "Facebook" },
   {
     icon: Instagram,
