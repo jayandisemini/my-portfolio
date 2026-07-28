@@ -102,6 +102,18 @@ export function Projects() {
                 >
                   <Sparkles size={14} className="text-primary" /> View Details
                 </button>
+                {p.liveUrl && (
+                  <a
+                    href={p.liveUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="inline-flex items-center justify-center p-2.5 rounded-xl text-xs font-semibold bg-gradient-to-r from-primary to-secondary text-primary-foreground hover:opacity-90 transition-all shadow-md"
+                    title="Open Live Demo"
+                  >
+                    <ExternalLink size={16} />
+                  </a>
+                )}
                 {p.repoUrl && (
                   <a
                     href={p.repoUrl}
