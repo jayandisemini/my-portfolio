@@ -202,22 +202,26 @@ export function Projects() {
 
                 {/* Footer Buttons */}
                 <div className="flex flex-wrap gap-3 pt-4 border-t border-white/10">
-                  <a
-                    href={activeProject.liveUrl ?? "#"}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition text-primary-foreground shadow-lg"
-                  >
-                    <ExternalLink size={16} /> Live Demo
-                  </a>
-                  <a
-                    href={activeProject.repoUrl ?? "#"}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold border border-white/15 hover:bg-white/10 transition text-foreground"
-                  >
-                    <Github size={16} /> View Code
-                  </a>
+                  {activeProject.liveUrl && activeProject.liveUrl !== activeProject.repoUrl && (
+                    <a
+                      href={activeProject.liveUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition text-primary-foreground shadow-lg"
+                    >
+                      <ExternalLink size={16} /> Live Demo
+                    </a>
+                  )}
+                  {activeProject.repoUrl && (
+                    <a
+                      href={activeProject.repoUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold border border-white/15 hover:bg-white/10 transition text-foreground"
+                    >
+                      <Github size={16} /> View Code
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.div>
