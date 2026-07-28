@@ -51,6 +51,22 @@ export const projects: Project[] = [
     liveUrl: "https://my-portfolio-awtb.vercel.app",
   },
   {
+    title: "Ayubowan Explorer",
+    desc: "Interactive Sri Lankan tourism & travel platform for discovering destinations, tours, and culture.",
+    longDesc: "A web platform designed to promote Sri Lankan tourism. Features destination guides, interactive travel itineraries, cultural landmark exploration, and direct booking inquiry management.",
+    category: "Web Development",
+    features: [
+      "Interactive destination guide & attraction discovery",
+      "Custom travel itinerary planning tools",
+      "Cultural landmark highlights & photo gallery",
+      "Tour booking inquiry form & contact system",
+    ],
+    tech: ["React", "TypeScript", "Tailwind CSS", "Vite"],
+    gradient: "from-amber-500/40 to-emerald-500/40",
+    emoji: "🌴",
+    repoUrl: "https://github.com/jayandisemini/ayubowan-explorer",
+  },
+  {
     title: "E-commerce Application",
     desc: "Full-stack online store with cart, checkout, and admin dashboard for product management.",
     longDesc: "An end-to-end full-stack shopping portal with role-based access control, product filtering, shopping cart state management, and an administrative panel for product catalog updates.",
