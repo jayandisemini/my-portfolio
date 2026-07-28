@@ -64,7 +64,8 @@ export const projects: Project[] = [
     tech: ["React", "TypeScript", "Tailwind CSS", "Vite"],
     gradient: "from-amber-500/40 to-emerald-500/40",
     emoji: "🌴",
-    repoUrl: "https://github.com/jayandisemini/ayubowan-explorer",
+    repoUrl: "https://github.com/jayandisemini/Ayubowan-Explorer",
+    liveUrl: "https://ayubowan-explorer.vercel.app",
   },
   {
     title: "E-commerce Application",
