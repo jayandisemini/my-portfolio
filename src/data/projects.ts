@@ -48,6 +48,7 @@ export const projects: Project[] = [
     gradient: "from-indigo-500/40 to-violet-500/40",
     emoji: "💼",
     repoUrl: "https://github.com/jayandisemini/my-portfolio",
+    liveUrl: "https://my-portfolio-awtb.vercel.app",
   },
   {
     title: "E-commerce Application",
