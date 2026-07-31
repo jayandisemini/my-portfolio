@@ -31,7 +31,7 @@ export const projects: Project[] = [
     tech: ["Flutter", "Dart", "Firebase"],
     gradient: "from-emerald-500/40 to-cyan-500/40",
     emoji: "🚌",
-    repoUrl: "https://github.com/LinalDevdun/campus_shuttle_tracker.git",
+    repoUrl: "https://github.com/LinalDevdun/shuttlex.git",
   },
   {
     title: "Portfolio Website",
