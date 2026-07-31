@@ -99,4 +99,20 @@ export const projects: Project[] = [
     emoji: "🧠",
     repoUrl: "https://github.com/Samadi858/Memory-Companion-Assistant-App-for-Dementia-Patients-.git",
   },
+  {
+    title: "Smart Inventory Management System (SIMS)",
+    desc: "Enterprise-level inventory platform with real-time stock control, analytics dashboard, and RBAC.",
+    longDesc: "An enterprise-level Smart Inventory Management System built with PHP 8, MySQL 8+, and object-oriented MVC architecture. Features real-time stock control, automated low-stock alerts, role-based access control, Chart.js analytics, and audit logging.",
+    category: "Enterprise System",
+    features: [
+      "Enterprise KPI analytics dashboard with Chart.js visualizations",
+      "Role-Based Access Control (Admin, Inventory Manager, Staff)",
+      "Stock In/Out receiving & dispatch with immutable audit logs",
+      "Automated low stock alerts & printable PDF/HTML reports",
+    ],
+    tech: ["PHP", "MySQL", "Bootstrap", "JavaScript", "Chart.js"],
+    gradient: "from-blue-500/40 to-indigo-600/40",
+    emoji: "📦",
+    repoUrl: "https://github.com/jayandisemini/inventory-management-system.git",
+  },
 ];
