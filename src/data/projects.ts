@@ -113,6 +113,6 @@ export const projects: Project[] = [
     tech: ["React", "FastAPI", "Python", "MySQL", "Docker"],
     gradient: "from-purple-500/40 to-teal-500/40",
     emoji: "🧠",
-    repoUrl: "https://github.com/Samadi858/Memory-Companion-Assistant-App-for-Dementia-Patients-",
+    repoUrl: "https://github.com/Samadi858/Memory-Companion-Assistant-App-for-Dementia-Patients-.git",
   },
 ];
