@@ -68,22 +68,6 @@ export const projects: Project[] = [
     liveUrl: "https://ayubowan-explorer.vercel.app",
   },
   {
-    title: "E-commerce Application",
-    desc: "Full-stack online store with cart, checkout, and admin dashboard for product management.",
-    longDesc: "An end-to-end full-stack shopping portal with role-based access control, product filtering, shopping cart state management, and an administrative panel for product catalog updates.",
-    category: "Full-Stack Web",
-    features: [
-      "Role-based authentication (Admin / Customer)",
-      "Dynamic search, sort, and category filter",
-      "Cart management & checkout workflow",
-      "Admin dashboard for inventory management",
-    ],
-    tech: ["React", "Node.js", "Express", "MongoDB"],
-    gradient: "from-rose-500/40 to-amber-500/40",
-    emoji: "🛍️",
-    repoUrl: "https://github.com/jayandisemini/ecommerce-app",
-  },
-  {
     title: "Project Approval System (PAS)",
     desc: "Web application with blind matching logic to connect student research projects with academic supervisors.",
     longDesc: "A web-based application developed using ASP.NET Core MVC to automate the process of matching student projects with academic supervisors. Implements a blind matching mechanism ensuring fair selection based on technical merit.",
