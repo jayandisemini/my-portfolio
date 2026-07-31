@@ -115,4 +115,24 @@ export const projects: Project[] = [
     emoji: "📦",
     repoUrl: "https://github.com/jayandisemini/inventory-management-system.git",
   },
+  {
+    title: "Debuglia",
+    desc: "A community-driven developer forum application for software debugging, Q&A discussions, and technical growth.",
+    longDesc: "Debuglia is a dynamic web-based forum application inspired by Stack Overflow and social media platforms. Built by a team of 10 developers, it empowers developers, IT students, and tech enthusiasts to debug code, share knowledge, track topic analytics, and engage in developer discussions.",
+    category: "Full-Stack Web",
+    features: [
+      "Social feed & rich post composer with category selection & multi-image attachments",
+      "Threaded comment system with nested replies and real-time like counters",
+      "Interactive user profile page with glowing avatar, social links & bio customization",
+      "Analytics dashboard featuring Chart.js 30-day activity visualization & KPI cards",
+      "Trending hashtag discovery (#Technology, #WebDevelopment, #AI) & real-time search",
+      "Customizable theme engine (Font sizes, accent colors & Light/Dim/Lights Out modes)",
+    ],
+    tech: ["PHP", "MySQL", "JavaScript", "CSS3", "Chart.js", "Bootstrap Icons"],
+    gradient: "from-teal-500/40 to-emerald-500/40",
+    emoji: "🐛",
+    repoUrl: "https://github.com/Y-Udayanga/Debugliya",
+    liveUrl: "https://debugliya.vercel.app",
+  },
 ];
+
