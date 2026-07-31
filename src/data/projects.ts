@@ -99,4 +99,20 @@ export const projects: Project[] = [
     emoji: "📋",
     repoUrl: "https://github.com/nmedussuriya/Project-Approval-System-.git",
   },
+  {
+    title: "Memory Companion - Dementia Patient Assistant",
+    desc: "Assistive Progressive Web App & caregiver monitoring dashboard for early-to-mid-stage dementia patients.",
+    longDesc: "A dedicated web-based assistive system designed to bridge the care gap for dementia patients and caregivers. Features a cognitively simplified patient interface (Visual Reminders, Memory Diary, Mood Tracker, Emergency SOS) paired with a secure remote guardian dashboard.",
+    category: "Full-Stack Web",
+    features: [
+      "Simplified patient interface with visual reminders & Emergency SOS",
+      "Memory diary, mood tracking & photo gallery for cognitive support",
+      "Remote guardian admin dashboard for scheduling & activity monitoring",
+      "Fully containerized full-stack deployment with Docker Compose",
+    ],
+    tech: ["React", "FastAPI", "Python", "MySQL", "Docker"],
+    gradient: "from-purple-500/40 to-teal-500/40",
+    emoji: "🧠",
+    repoUrl: "https://github.com/Samadi858/Memory-Companion-Assistant-App-for-Dementia-Patients-",
+  },
 ];
